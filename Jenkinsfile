@@ -3,18 +3,18 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building...'
+                echo 'Building the project'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing...'
+                echo 'Running tests'
             }
         }
-        stage('Done') {
-            steps {
-                echo 'Pipeline complete'
-            }
+    }
+    post {
+        success {
+            echo 'Pipeline succeeded'
         }
     }
 }
